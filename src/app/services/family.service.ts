@@ -4,15 +4,15 @@ import { Observable } from 'rxjs';
 import { Category } from '../model/category.model';
 
 @Injectable({ providedIn: 'root' })
-export class CategoryService {
-  private baseUrl = 'http://localhost:9090/api/categories';
+export class FamilyService {
+  private baseUrl = 'http://localhost:9090/api/families';
 
   constructor(private http: HttpClient) {}
 
   getAll(): Observable<Category[]> {
     return this.http.get<Category[]>(this.baseUrl);
   }
-  getById(id: number): Observable<any> {
+   getById(id: number): Observable<any> {
     return this.http.get<any>(`${this.baseUrl}/${id}`);
   }
 }
